@@ -6,3 +6,7 @@ obsidian_journal_path = "Bullet Journal/"
 
 # Fill this in with path for the weekly templates (if applicable)
 weekly_template_path = "Templates/Weekly Template.md"
+
+obsidian_dossier_path = "Journal/Dossier/"
+
+birthday_calendar_note = "Bullet Journal Meta/Schedule/Birthdays.md"
