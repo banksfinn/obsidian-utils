@@ -52,13 +52,24 @@ for day_index, row in enumerate(existing_data.split("\n")):
         month = month_index - month_index_skip
         day = day_index - day_index_skip
         date_string = f"{month}/{day}"
+        birthday_values = []
         # Check if there is a match
         if date_string in birthdays:
             # We have a birthday match!
             for name in birthdays[date_string]:
                 if name not in column:
-                    values.append("#birthday [[" + name + "]]")
-        values.append(column)
+                    birthday_values.append("[[" + name + "]]")
+
+        data_points = []
+        if column.strip():
+            data_points.append(column.strip())
+        if birthday_values:
+            data_points = data_points + birthday_values
+
+        if not data_points:
+            data_points.append("")
+
+        values.append("<br>".join(data_points))
 
     new_data += "|".join(values) + "\n"
 

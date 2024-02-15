@@ -1,6 +1,15 @@
 #!/bin/bash
 set -o pipefail
 
+echo "This will replace your current settings, continue (y):"
+
+read confirmation
+if [ "y" = "$confirmation" ]; then
+    echo "Confirmed."
+else
+    exit
+fi
+
 echo "Generating scripts virtual environment (python)"
 python3 -m venv scripts/venv
 source scripts/venv/bin/activate
